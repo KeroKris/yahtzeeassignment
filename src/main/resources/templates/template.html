@@ -2,23 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="headtemplate">
     <meta charset="UTF-8"/>
-
-
-
     <link th:href="@{/css/testsite.css}" rel="stylesheet" />
     <script th:src="@{/js/script.js}"></script>
-
     <title>Hello, Spring through Thymeleaf</title>
 </head>
 
 <div th:fragment="header">
     <div><a href="https://en.wikipedia.org/wiki/Yahtzee"><img src="img/logo.png" /></a></div>
    <div>
-       <h2>Play some Yahtzee, won't ya?!</h2>
+       <h2>Play some Yahtzee, won'tcha?!</h2>
    </div>
 </div>
-
-
 
 <div th:fragment="highscoreFragment">
     <table class="table">
@@ -27,7 +21,6 @@
             <th>Rank</th>
             <th>Name</th>
             <th>Score</th>
-            <!--<th>Total Price</th>-->
             <th style="width: 90px"></th>
         </tr>
         </thead>
@@ -61,10 +54,6 @@
 </div>
 
 
-
-
-
-
 <div th:fragment="loginFragment">
     <form id="mainInteractionForm">
         <p>Welcome to Yahtzee Online, please enter your </p>
@@ -86,7 +75,6 @@
                 </th>
             </tr>
         </table>
-
         <input type="submit" value="Enter" />
     </form>
 </div>
