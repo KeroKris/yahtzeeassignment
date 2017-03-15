@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Yahtzee Highscore</title>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+</head>
+
+<body ng-app="app" ng-controller="BookingsController as vm">
+<div>
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-8">
+
+            <form name="searchGameLog" ng-submit="vm.getGameLog(gameID)" class="search-form">
+                <label for="searchInput" id="loginInputLabel">Enter game ID:</label>
+                <input type="search" name="searchInput" id="searchInput" ng-model="gameID" placeholder="gameID ex. 1014" />
+                <input type="submit" value="Enter" />
+            </form>
+
+            <div  id="dbResultsList">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Round</th>
+                        <th>Player</th>
+                        <th>Result</th>
+                        <th>Combination</th>
+                        <th>Points</th>
+                        <th style="width: 90px"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="log in vm.gameLogList">
+                        <td>{{log.round}}</td>
+                        <td>{{log.player}}</td>
+                        <td>{{log.result}}</td>
+                        <td>{{log.combination}}</td>
+                        <td>{{log.points}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../static/js/angular.min.js" th:src="@{../js/angular.min.js}"></script>
+<script type="text/javascript" src="../static/app/app.module.js" th:src="@{../app/app.module.js}"></script>
+<script type="text/javascript" src="../static/app/highscore.controller.js" th:src="@{../app/highscore.controller.js}"></script>
+
+</body>
+</html>

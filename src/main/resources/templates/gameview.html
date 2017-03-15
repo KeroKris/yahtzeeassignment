@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Yahtzee Highscore</title>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+</head>
+
+<body ng-app="app" ng-controller="MainController as mc" >
+
+<form class="bordered-image simple-form" id="yahtzeePlayForm" ng-submit="mc.scoreCombination(scoreSelector)">
+
+    <div id="currentPlayerTitle">
+        <h4>
+            {{mc.currentPlayer.name}} Rolls Remaining: {{mc.rollsRemaining}}
+        </h4>
+    </div>
+
+    <div id="diceDisplayDiv" class="bordered-image simple-form">
+        <div id="dieResultListDiv">
+        </div>
+        <div id="checkBoxDiv" class="simple-form">
+            <div ng-repeat="die in mc.dice">
+                <label>{{die.result}}   Save Die:
+                    <input type="checkbox" ng-model="die.saved[die.id]" />
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <label for="combinationChoice">Combination:</label>
+            <select id="combinationChoice" ng-model="scoreSelector" ng-options="score.name disable when score.scored for score in mc.currentPlayer.combinations" ></select>
+        <br />
+        <button ng-click="mc.diceRoller()">Roll</button>
+        <input type="submit" value="Score" />
+    </div>
+</form>
+
+
+<div id="scoreBoardView" class="simple-form">
+
+    <div ng-repeat="player in mc.players" class="score-display simple-form">
+            <h4>{{player.name}}</h4>
+            <div ng-repeat="combinations in player.combinations" >
+                {{combinations.name}} <strong>{{combinations.score}}</strong>
+            </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../static/js/angular.min.js" th:src="@{../js/angular.min.js}"></script>
+<script type="text/javascript" src="../static/app/app.module.js" th:src="@{../app/app.module.js}"></script>
+<script type="text/javascript" src="../static/app/highscore.controller.js" th:src="@{../app/highscore.controller.js}"></script>
+
+</body>
+</html>

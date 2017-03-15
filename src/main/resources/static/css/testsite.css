@@ -1,0 +1,90 @@
+/* testsite.css */
+.simple-form {
+    padding: 2px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bordered-image {
+    border: solid 1px #444;
+    border-radius: 2px;
+}
+
+#mainAppView{
+    margin: 0px 20px;
+    padding:20px 10px;
+}
+
+.content-view{
+    border: solid 5px green;
+    border-radius: 10px;
+    margin-bottom: 1px;
+}
+
+#content-view-button-group{
+    margin: 20px;
+}
+
+.loginForm{
+    padding: 10px;
+}
+
+.infoDisplay{
+    margin: 0px 30px;
+    padding: 0px 20px 10px;
+}
+
+.search-form{
+    margin: 20px;
+}
+
+#dieResultListDiv{
+    width: 24px;
+}
+
+#dieResultListDiv div{
+    margin: 7px;
+}
+
+#checkBoxDiv{
+    padding: 5px;
+    margin: 5px;
+    width: auto;
+}
+
+#yahtzeePlayForm{
+    width: 234px;
+}
+#diceDisplayDiv{
+    margin-bottom: 5px;
+    width: 228px;
+}
+
+#diceDisplayDiv label{
+    font-size: 20px;
+}
+
+#currentPlayerTitle{
+    padding: 0 10px;
+}
+.score-display{
+    width: 145px;
+}
+.score-display h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.score-display strong{
+    color: green;
+}
+
+#scoreBoardView{
+    padding: 0 5px;
+    width: auto;
+}
+.welcome-message-view{
+    width: 290px;
+    margin-bottom: 15px;
+}

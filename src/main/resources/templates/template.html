@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headtemplate">
+    <meta charset="UTF-8"/>
+
+
+
+    <link th:href="@{/css/testsite.css}" rel="stylesheet" />
+    <script th:src="@{/js/script.js}"></script>
+
+    <title>Hello, Spring through Thymeleaf</title>
+</head>
+
+<div th:fragment="header">
+    <div><a href="https://en.wikipedia.org/wiki/Yahtzee"><img src="img/logo.png" /></a></div>
+   <div>
+       <h2>Play some Yahtzee, won't ya?!</h2>
+   </div>
+</div>
+
+
+
+<div th:fragment="highscoreFragment">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+            <!--<th>Total Price</th>-->
+            <th style="width: 90px"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="booking in vm.bookings">
+            <td>{{booking.rank}}</td>
+            <td>{{booking.name}}</td>
+            <td>{{booking.score}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div th:fragment="playerViewerFragment" >
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Player</th>
+            <th>Score</th>
+            <th style="width: 90px"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="player in mc.players | orderBy : '-score'">
+            <td>{{player.name}}</td>
+            <td>{{player.score}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<div th:fragment="loginFragment">
+    <form id="mainInteractionForm">
+        <p>Welcome to Yahtzee Online, please enter your </p>
+        <table>
+            <tr>
+                <th>
+                    <label for="loginInput" id="loginInputLabel">name:</label><br />
+                </th>
+                <th>
+                    <input type="text" name="loginInput" id="loginInput" /> <br />
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label for="passwordInput" id="passwordInputLabel">Password:</label> <br />
+                </th>
+                <th>
+                    <input type="password" name="passwordInput" id="passwordInput" />
+                </th>
+            </tr>
+        </table>
+
+        <input type="submit" value="Enter" />
+    </form>
+</div>
+
+<p th:fragment="footer">
+    <strong>
+        &copy; Kristoffer Kero
+    </strong>
+</p>
+
+</html>
